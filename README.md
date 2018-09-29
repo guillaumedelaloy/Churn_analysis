@@ -31,7 +31,7 @@ Clients with Fiber optic have a high churn rate:
 ![](Internet_churn.png?raw=true "Clients with Fiber optic have a high churn rate")
 
 
-According to the graphs above, it looks like some variables such as the payment method or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
+According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
 
 
 # Feature Engineering :
