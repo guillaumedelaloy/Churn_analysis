@@ -17,6 +17,20 @@ The data set contains information on 7032 clients that subscrided a contract. Am
 
 ##### Some visualisations : 
 
+Many churners have a month to month subscription:
+
+
+
+![](Churn_Contract.png?raw=false "Many churners have a month to month subscription")
+
+
+
+Clients with Fiber optic have a high churn rate:
+
+
+![](Internet_churn.png?raw=true "Clients with Fiber optic have a high churn rate")
+
+
 According to the graphs above, it looks like some variables such as the payment method or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
 
 
