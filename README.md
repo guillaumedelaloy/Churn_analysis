@@ -8,14 +8,14 @@ The data set comes from [IBM Sample Data Sets](https://community.watsonanalytics
 
 The data set contains information on 7032 clients that subscrided a contract. Among those 7032 clients, 1869 clients have churned. The objective is to understand why they churned and provide a strategy to reduce this number.
 
-##### available information : 
+##### Data overview
 
 - Churn, Yes or No
 - Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
 - Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges
 - Demographic info about customers – gender, age range, and if they have partners and dependents
 
-##### Some visualisations : 
+##### Some visualisations 
 
 Many churners have a month to month subscription:
 
@@ -34,9 +34,9 @@ Clients with Fiber optic have a high churn rate:
 According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
 
 
-# Feature Engineering :
+# Feature Engineering 
 
-##### Rebalance the data : 
+##### Rebalance the data 
 
 In this kind of classification problems, we need to work with balanced classes. Let's upsample the minority class:
 
@@ -51,7 +51,7 @@ data_bal=pd.concat([df_minority_upsampled,majority])
 
 ```
 
-##### Dealing with colinearity :
+##### Dealing with colinearity 
 
 We first convert the categorical variables to dummies:
 ```
@@ -72,9 +72,28 @@ for each variable, we look for the variables with a correlation above a threshol
 
 ![](Churn_decorr.png?raw=false)
 
+# Machine learning modeling
+
+We have two goals here:
+
+1° - detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
+
+2° - Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
 
 
+##### Logistic Regression
 
+##### Random Forest
+
+##### 
+
+# Interpretation
 
 ![](RF_inter_3.png?raw=false)
+
+# Conclusions
+
+# What's next ?
+
+
 
