@@ -68,7 +68,7 @@ We can see that many variables are very correlated. For instance, 'InternetServi
 
 In order to remove the colinearities, we implement the following idea : 
 
-for each variable, we look for the variables with a correlation above a threshold (let's say 0.8 by default). Then we order those variables by descending correlation and we add the first one to a list. At the end of the for loop, the list contains all the variables we will remove from the explanatory variables. After some tests, we choose 0.85 as the optimal threshold and we obtain the following correlations:
+for each variable, we look for the variables with a correlation above a threshold. Then we order those variables by descending correlation and we add the first one to a list. At the end of the while loop, the list contains all the variables we will remove from the explanatory variables. After some tests, we choose 0.85 as the optimal threshold and we obtain the following correlations:
 
 ![](Churn_decorr.png?raw=false)
 
@@ -76,12 +76,21 @@ for each variable, we look for the variables with a correlation above a threshol
 
 We have two goals here:
 
-1° - detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
+goal 1: detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
 
-2° - Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
-
+goal 2: Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
 
 ##### Logistic Regression
+
+Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters. we obtain the following results:
+```
+              precision    recall  f1-score   support
+
+          0       0.79      0.75      0.77      1559
+          1       0.76      0.79      0.78      1539
+
+avg / total       0.77      0.77      0.77      3098
+```
 
 ##### Random Forest
 
