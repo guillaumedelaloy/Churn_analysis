@@ -83,6 +83,7 @@ goal 2: Have a model with a good interpretability, in order to be able to preven
 ##### Logistic Regression
 
 Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters. we obtain the following results:
+
 ```
               precision    recall  f1-score   support
 
@@ -93,6 +94,17 @@ avg / total       0.77      0.77      0.77      3098
 ```
 
 ##### Random Forest
+
+We obtain better results with a random forest model. It is particularly interesting to see that the recall for class 1, ie the 'churners' is 93% : 
+
+```
+              precision    recall  f1-score   support
+
+          0       0.92      0.86      0.89      1559
+          1       0.87      0.93      0.90      1539
+
+avg / total       0.90      0.90      0.90      3098
+```
 
 ##### 
 
