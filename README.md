@@ -73,5 +73,8 @@ for each variable, we look for the variables with a correlation above a threshol
 ![](Churn_decorr.png?raw=false)
 
 
-![](RF_inter_3.png.png?raw=false)
+
+
+
+![](RF_inter_3.png?raw=false)
 
