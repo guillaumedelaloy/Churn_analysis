@@ -21,14 +21,14 @@ Many churners have a month to month subscription:
 
 
 
-![](Churn_Contract.png?raw=false "Many churners have a month to month subscription")
+![](Churn_Contract.png?raw=false )
 
 
 
 Clients with Fiber optic have a high churn rate:
 
 
-![](Internet_churn.png?raw=true "Clients with Fiber optic have a high churn rate")
+![](Internet_churn.png?raw=true)
 
 
 According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
@@ -50,3 +50,26 @@ df_minority_upsampled = resample(minority,
 data_bal=pd.concat([df_minority_upsampled,majority])
 
 ```
+
+##### Dealing with colinearity :
+
+We first convert the categorical variables to dummies:
+```
+data=pd.get_dummies(data_bal[categorical_var],drop_first=True)
+```
+The parameter drop_first=True means that one categorical variable taking m possible values will be converted to m-1 dummies (and not m dummies).
+
+Now let's check the correlations between the 32 variables:
+
+
+![](Churn_corr.png?raw=false )
+
+We can see that many variables are very correlated. For instance, 'InternetService_No' is obviously highly correlated with 'OnlineSecurity_No internet service'. 
+
+In order to remove the colinearities, we implement the following idea : 
+
+for each variable, we look for the variables with a correlation above a threshold (let's say 0.8 by default). Then we order those variables by descending correlation and we add the first one to a list. At the end of the for loop, the list contains all the variables we will remove from the explanatory variables. After some tests, we choose 0.85 as the optimal threshold and we obtain the following correlations:
+
+![](Churn_decorr.png?raw=false)
+
+
