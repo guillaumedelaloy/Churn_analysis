@@ -82,7 +82,7 @@ goal 2: Have a model with a good interpretability, in order to be able to preven
 
 ##### Logistic Regression
 
-Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters. we obtain the following results:
+Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters and obtain the following results with the best parameters:
 
 ```
               precision    recall  f1-score   support
@@ -107,7 +107,7 @@ We obtain better results with a random forest model. It is particularly interest
 avg / total       0.90      0.90      0.90      3098
 ```
 
-We could have slightly better results with an SVM classifier (see code [here](https://github.com/guillaumedelaloy/Churn_analysis/blob/master/churn_prediction.ipynb))
+We could have slightly better results with an SVM classifier (see code [here](https://github.com/guillaumedelaloy/Churn_analysis/blob/master/churn_prediction.ipynb)).
 However, SVMs are really hard to interpret so we won't choose this model.
 
 
@@ -121,11 +121,21 @@ Random forests rely on two principles :
 - random subset of features : each decision tree is trained on a subset of features
 
 Random forests are often considered as a "black box" but some tools can make their interpretation quite straightforward.
-For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I chose trees of small maximum depth (three) because deep trees are impossible to display:
+For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I choose trees of small maximum depth (=3) because deep trees are impossible to display:
+
+
 
 
 ![](RF_inter_3.png?raw=false)
 
+
+We can see in the upper cell that we initially have 7228 individuals in our training set. The value array indicates the population is divided in two classes: 'no churn' (3604) and 'churn' (3624). We can read ```class = Churn ``` because 'churn' is the dominant class (3624 > 3604).
+
+The first decision is based on the value of 'Contract_Two year' : 
+  
+  If ```(Contract_Two year <= 0.5) == False ``` , i.e  ```Contract = Two year ``` , then we go right. Among the initial 7228   individuals, only 1206 have a two year contract. Among those 1206 individuals, 1114 belong to the 'no churn' class. As a consequence, people with a two year contract are strongly likely to do not churn. We can make similar analyses for the other branches of the tree.
+  
+  
 
 # Conclusions
 
