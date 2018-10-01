@@ -7,10 +7,12 @@ The objective of this project is to understand and predict the churn of a teleco
 # Table of Contents
 
 * [Introduction](#Introduction)
+{:Introduction}
 * [Feature Engineering](#Feature-Engineering) 
 * [Machine learning modeling](#Machine-learning-modeling)
 * [Interpretation of the model](#Interpretation-of-the-model)
 * [Conclusions](#Conclusions)
+{:Introduction}
 * [What's next?](#What's-next?)
 
 
