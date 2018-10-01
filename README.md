@@ -4,7 +4,15 @@ The objective of this project is to understand and predict the churn of a teleco
 
 The data set comes from [IBM Sample Data Sets](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv)
 
-# Introduction
+Table of Contents
+
+* [Introduction](# Introduction)
+* [Feature Engineering](# Feature Engineering) 
+* [Machine learning modeling](# Machine learning modeling)
+* [Interpretation of the model](# Interpretation of the model)
+* [Conclusions](# Conclusions)
+* [What's next?](# What's next?)
+
 
 The data set contains information on 7032 clients that subscrided a contract. Among those 7032 clients, 1869 clients have churned. The objective is to understand why they churned and provide a strategy to reduce this number.
 
