@@ -6,17 +6,15 @@ The objective of this project is to understand and predict the churn of a teleco
 
 # Table of Contents
 
-* [Introduction](#Introduction)
-{:Introduction}
-* [Feature Engineering](#Feature-Engineering) 
-* [Machine learning modeling](#Machine-learning-modeling)
-* [Interpretation of the model](#Interpretation-of-the-model)
-* [Conclusions](#Conclusions)
-{:Introduction}
-* [What's next?](#What's-next?)
+* [Introduction](#introduction)
+* [Feature Engineering](#feature-Engineering) 
+* [Machine learning modeling](#machine-learning-modeling)
+* [Interpretation of the model](#interpretation-of-the-model)
+* [Conclusions](#conclusions)
+* [What's next?](#what's-next?)
 
 
-# Introduction
+## Introduction
 
 #### Data overview
 
@@ -52,7 +50,7 @@ Clients with Fiber optic have a high churn rate :
 According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
 
 
-# Feature Engineering 
+## Feature Engineering 
 
 
 #### Rebalance the data 
@@ -100,7 +98,7 @@ for each variable, we look for the variables with a correlation above a threshol
 
 
 
-# Machine learning modeling
+## Machine learning modeling
 
 
 
@@ -145,7 +143,7 @@ We could have slightly better results with an SVM classifier (see code [here](ht
 However, SVMs are really hard to interpret so we won't choose this model.
 
 
-# Interpretation of the model
+## Interpretation of the model
 
 
 #### visualization
@@ -180,9 +178,9 @@ The first decision is based on the value of 'Contract_Two year' :
   
   
 
-# Conclusions
+## Conclusions
 
-# What's next ?
+## What's next ?
 
 
 
