@@ -8,14 +8,15 @@ The data set comes from [IBM Sample Data Sets](https://community.watsonanalytics
 
 The data set contains information on 7032 clients that subscrided a contract. Among those 7032 clients, 1869 clients have churned. The objective is to understand why they churned and provide a strategy to reduce this number.
 
-##### Data overview
+#### Data overview
 
 - Churn, Yes or No
 - Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
 - Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges
 - Demographic info about customers – gender, age range, and if they have partners and dependents
 
-##### Some visualisations 
+#### Some visualisations 
+
 
 Many churners have a month to month subscription :
 
@@ -25,10 +26,13 @@ Many churners have a month to month subscription :
 
 
 
+
 Clients with Fiber optic have a high churn rate :
 
 
+
 ![](Internet_churn.png?raw=true)
+
 
 
 According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
@@ -36,7 +40,8 @@ According to the graphs above, it looks like some variables such as the internet
 
 # Feature Engineering 
 
-##### Rebalance the data 
+
+#### Rebalance the data 
 
 In this kind of classification problems, we need to work with balanced classes. Let's upsample the minority class :
 
@@ -51,7 +56,9 @@ data_bal=pd.concat([df_minority_upsampled,majority])
 
 ```
 
-##### Dealing with colinearity 
+
+#### Dealing with colinearity 
+
 
 We first convert the categorical variables to dummies :
 ```
@@ -62,7 +69,10 @@ The parameter drop_first=True means that one categorical variable taking m possi
 Now let's check the correlations between the 32 variables :
 
 
+
 ![](Churn_corr.png?raw=false )
+
+
 
 We can see that many variables are very correlated. For instance, 'InternetService_No' is obviously highly correlated with 'OnlineSecurity_No internet service'. 
 
@@ -70,9 +80,15 @@ In order to remove the colinearities, we implement the following idea :
 
 for each variable, we look for the variables with a correlation above a threshold. Then we order those variables by descending correlation and we add the first one to a list. At the end of the while loop, the list contains all the variables we will remove from the explanatory variables. After some tests, we choose 0.85 as the optimal threshold and we obtain the following correlations:
 
+
+
 ![](Churn_decorr.png?raw=false)
 
+
+
 # Machine learning modeling
+
+
 
 We have two goals here :
 
@@ -80,7 +96,9 @@ goal 1 : detect efficiently the customers that are likely to churn. We assume th
 
 goal 2 : Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
 
-##### Logistic Regression
+
+#### Logistic Regression
+
 
 Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters and obtain the following results with the best parameters :
 
@@ -93,7 +111,9 @@ Logistic regressions are very good for interpretabilty but usually not so acurra
 avg / total       0.77      0.77      0.77      3098
 ```
 
-##### Random Forest
+
+#### Random Forest
+
 
 We obtain better results with a random forest model. It is particularly interesting to see that the recall for class 1, ie the 'churners' is 93% : 
 
@@ -113,7 +133,8 @@ However, SVMs are really hard to interpret so we won't choose this model.
 
 # Interpretation of the model
 
-##### visualization
+
+#### visualization
 
 Random forests rely on two principles :
 
@@ -126,7 +147,14 @@ For instance, I decided to use graphviz, a visualization tool for decision trees
 
 
 
+
+
 ![](RF_inter_3.png?raw=false)
+
+
+
+
+
 
 
 We can see in the upper cell that we initially have 7228 individuals in our training set. The ```value``` array indicates the population is divided in two classes: 'no churn' (3604) and 'churn' (3624). We can read ```class = Churn ``` because 'churn' is the dominant class (3624 > 3604).
