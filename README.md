@@ -17,7 +17,7 @@ The data set contains information on 7032 clients that subscrided a contract. Am
 
 ##### Some visualisations 
 
-Many churners have a month to month subscription:
+Many churners have a month to month subscription :
 
 
 
@@ -25,7 +25,7 @@ Many churners have a month to month subscription:
 
 
 
-Clients with Fiber optic have a high churn rate:
+Clients with Fiber optic have a high churn rate :
 
 
 ![](Internet_churn.png?raw=true)
@@ -38,7 +38,7 @@ According to the graphs above, it looks like some variables such as the internet
 
 ##### Rebalance the data 
 
-In this kind of classification problems, we need to work with balanced classes. Let's upsample the minority class:
+In this kind of classification problems, we need to work with balanced classes. Let's upsample the minority class :
 
 ```
 minority=raw_data[raw_data.Churn=='Yes']
@@ -53,13 +53,13 @@ data_bal=pd.concat([df_minority_upsampled,majority])
 
 ##### Dealing with colinearity 
 
-We first convert the categorical variables to dummies:
+We first convert the categorical variables to dummies :
 ```
 data=pd.get_dummies(data_bal[categorical_var],drop_first=True)
 ```
 The parameter drop_first=True means that one categorical variable taking m possible values will be converted to m-1 dummies (and not m dummies).
 
-Now let's check the correlations between the 32 variables:
+Now let's check the correlations between the 32 variables :
 
 
 ![](Churn_corr.png?raw=false )
@@ -74,15 +74,15 @@ for each variable, we look for the variables with a correlation above a threshol
 
 # Machine learning modeling
 
-We have two goals here:
+We have two goals here :
 
-goal 1: detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
+goal 1 : detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
 
-goal 2: Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
+goal 2 : Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
 
 ##### Logistic Regression
 
-Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters and obtain the following results with the best parameters:
+Logistic regressions are very good for interpretabilty but usually not so acurrate. We implement a quick grid search in order to optimize the parameters and obtain the following results with the best parameters :
 
 ```
               precision    recall  f1-score   support
@@ -129,11 +129,12 @@ For instance, I decided to use graphviz, a visualization tool for decision trees
 ![](RF_inter_3.png?raw=false)
 
 
-We can see in the upper cell that we initially have 7228 individuals in our training set. The value array indicates the population is divided in two classes: 'no churn' (3604) and 'churn' (3624). We can read ```class = Churn ``` because 'churn' is the dominant class (3624 > 3604).
+We can see in the upper cell that we initially have 7228 individuals in our training set. The ```value``` array indicates the population is divided in two classes: 'no churn' (3604) and 'churn' (3624). We can read ```class = Churn ``` because 'churn' is the dominant class (3624 > 3604).
 
 The first decision is based on the value of 'Contract_Two year' : 
   
   If ```(Contract_Two year <= 0.5) == False ``` , i.e  ```Contract = Two year ``` , then we go right. Among the initial 7228   individuals, only 1206 have a two year contract. Among those 1206 individuals, 1114 belong to the 'no churn' class. As a consequence, people with a two year contract are strongly likely to do not churn. We can make similar analyses for the other branches of the tree.
+  
   
   
 
