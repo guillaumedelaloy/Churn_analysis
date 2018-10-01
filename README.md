@@ -14,6 +14,8 @@ The objective of this project is to understand and predict the churn of a teleco
 * [What's next?](# What's next?)
 
 
+# Introduction
+
 #### Data overview
 
 The data set comes from [IBM Sample Data Sets](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv)
