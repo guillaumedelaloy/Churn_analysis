@@ -97,6 +97,7 @@ avg / total       0.77      0.77      0.77      3098
 
 We obtain better results with a random forest model. It is particularly interesting to see that the recall for class 1, ie the 'churners' is 93% : 
 
+
 ```
               precision    recall  f1-score   support
 
@@ -106,11 +107,25 @@ We obtain better results with a random forest model. It is particularly interest
 avg / total       0.90      0.90      0.90      3098
 ```
 
-##### 
+We could have slightly better results with an SVM classifier (see code [here](https://github.com/guillaumedelaloy/Churn_analysis/blob/master/churn_prediction.ipynb))
+However, SVMs are really hard to interpret so we won't choose this model.
 
-# Interpretation
+
+# Interpretation of the model
+
+##### visualization
+
+Random forests rely on two principles :
+
+- bagging : choose B samples and train decision trees on each of these B samples. Then we take the mode of all the predictions in order to determine the predicted class.
+- random subset of features : each decision tree is trained on a subset of features
+
+Random forests are often considered as a "black box" but some tools can make their interpretation quite straightforward.
+For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I chose trees of small maximum depth (three) because deep trees are impossible to display:
+
 
 ![](RF_inter_3.png?raw=false)
+
 
 # Conclusions
 
