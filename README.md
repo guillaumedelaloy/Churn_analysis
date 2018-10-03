@@ -160,7 +160,6 @@ For instance, I decided to use graphviz, a visualization tool for decision trees
 
 
 
-
 ![](RF_inter_3.png?raw=false)
 
 
@@ -174,7 +173,7 @@ We can see in the upper cell that we initially have 7228 individuals in our trai
 The first decision is based on the value of 'Contract_Two year' : 
   
   If ```(Contract_Two year <= 0.5) == False ``` , i.e  ```Contract = Two year ``` , then we go right. Among the initial 7228   individuals, only 1206 have a two year contract. Among those 1206 individuals, 1114 belong to the 'no churn' class. As a consequence, people with a two year contract are strongly likely to do not churn. We can make similar analyses for the other branches of the tree.
-  
+    
 
 
 
@@ -195,7 +194,12 @@ Let's now have a look at the importance of each feature in the model :
 
 
 
-We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed at 70% of the predictive power of our model. I summed the feature importances of the dummies in order to group it under one categorical variable, which is easier for interpretation.
+We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed at 70% of the predictive power of our model. I summed the feature importances of the dummies under their corresponding categorical variables for interpretation purposes.
+
+
+
+#### Feature impact on churn probability
+
 
   
   
