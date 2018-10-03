@@ -194,7 +194,7 @@ Let's now have a look at the importance of each feature in the model :
 
 
 
-We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed at 70% of the predictive power of our model. I summed the feature importances of the dummies under their corresponding categorical variables for interpretation purposes.
+We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed to 70% of the predictive power of our model. I summed the feature importances of the dummies under their corresponding categorical variables for interpretation purposes.
 
 
 
