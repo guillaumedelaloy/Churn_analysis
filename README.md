@@ -200,9 +200,23 @@ We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 
 
 #### Feature impact on churn probability
 
+Now that we know what features are important, let's investigate how each feature impacts the churn probability.
+In order to do this, i used the  ``` treeinterpreter ``` package. Here is the example of three customers.
+Each feature has a contribution to the predicted probability, written in parenthesis below.
 
-  
-  
+
+
+
+
+![](impact_proba.png?raw=true)
+
+
+
+
+
+
+
+
   
 
 ## Conclusions
