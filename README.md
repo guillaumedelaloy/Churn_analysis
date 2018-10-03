@@ -146,7 +146,7 @@ However, SVMs are really hard to interpret so we won't choose this model.
 ## Interpretation of the model
 
 
-#### visualization
+#### Decision tree
 
 Random forests rely on two principles :
 
@@ -154,7 +154,7 @@ Random forests rely on two principles :
 - random subset of features : each decision tree is trained on a subset of features
 
 Random forests are often considered as a "black box" but some tools can make their interpretation quite straightforward.
-For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I choose trees of small maximum depth (=3) because deep trees are impossible to display:
+For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I choose a tree of small maximum depth (=3) because deep trees are impossible to display:
 
 
 
@@ -174,6 +174,29 @@ We can see in the upper cell that we initially have 7228 individuals in our trai
 The first decision is based on the value of 'Contract_Two year' : 
   
   If ```(Contract_Two year <= 0.5) == False ``` , i.e  ```Contract = Two year ``` , then we go right. Among the initial 7228   individuals, only 1206 have a two year contract. Among those 1206 individuals, 1114 belong to the 'no churn' class. As a consequence, people with a two year contract are strongly likely to do not churn. We can make similar analyses for the other branches of the tree.
+  
+
+
+
+#### Feature importance
+
+
+
+
+
+Let's now have a look at the importance of each feature in the model :
+
+
+
+
+![](feature_importance.png?raw=false)
+
+
+
+
+
+We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed at 70% of the predictive power of our model. I summed the feature importances of the dummies in order to group it under one categorical variable, which is easier for interpretation.
+
   
   
   
