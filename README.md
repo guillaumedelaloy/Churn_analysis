@@ -234,8 +234,9 @@ We can correlate this intuition with the following graph:
 
 
 
-We can clearly see that the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
-We can have similar analysis for the other variables. We obtain that the "breakeven point" for MonthlyCharges is 60 : a contract more expensive than 60$ per month increases the probability of Churn.
+We can clearly see that, in average, the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
+
+We can have similar analysis with the other variables. We obtain that the "breakeven point" for MonthlyCharges is 60 : a contract more expensive than 60$ per month increases the churn probability.
 
 
 
@@ -257,7 +258,7 @@ We can have similar analysis for the other variables. We obtain that the "breake
 
 2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
 
-3: We know that the categories tenure < 24, monthly contract, with fiber optic, paying by electronic check who have monthly charges above 60 are the categories that increase the churn probability
+3: We know that, in average, the categories ```tenure < 24```, ```month to month contract```, ```fiber optic```, ```paying by electronic check```, with ```monthly charges > 60``` increase the churn probability
 
 
 ## What's next ?
