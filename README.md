@@ -255,7 +255,7 @@ Now if your company needs to actually tackle a churn problem, here is the proces
 
 ## Weaknesses of this dataset
 
-The overall quality of the data is good but here are some improvements we could have:
+The overall quality of the data is good but here are some ways of improvement:
 
 1: The size of the data is 7K lines, which is rather small. Bigger size will improve the trust in the results.
 
