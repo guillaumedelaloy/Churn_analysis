@@ -244,20 +244,22 @@ We can have similar analysis for the other variables. We obtain that the "breake
 
 ## Conclusions
 
-conclusion 1: We can predict with good performances the churn of customers
+1: We can predict with good performances the churn of customers
 
-conclusion 2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
+2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
 
-conclusion 3: We know that the categories tenure < 24, monthly contract, with fiber optic, paying by electronic check who have monthly charges above 60 are the categories that increase the churn probability
+3: We know that the categories tenure < 24, monthly contract, with fiber optic, paying by electronic check who have monthly charges above 60 are the categories that increase the churn probability
 
 
 ## What's next ?
 
 Now if your company needs to actually tackle a churn problem, here is the process you need to implement:
 
-- Train and deploy periodically the model we chose on your customers' database(s)
-- Compute the churn probability given by your model for each customer, and write the result in the database
-- Then make this information available to the people interacting with the client, so that they can focus more on the clients with high churn probabilities.
+1: Train and deploy periodically the model we chose on your customers' database(s)
+
+2: Compute the churn probability given by your model for each customer, and write the result in the database
+
+3: Then make this information available to the people interacting with the client, so that they can focus more on the clients with high churn probabilities.
 
 ## Weaknesses of this dataset
 
