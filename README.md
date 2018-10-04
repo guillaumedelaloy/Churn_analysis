@@ -1,6 +1,7 @@
 # How can we improve customers' retention ?
 
-The objective of this project is to understand and predict the churn of a telecommunication firm customers, in order to improve customers' retention.
+The objective of this project is to understand and predict the churn of a telecommunication firm customers, in order to improve customers' retention. 
+Here I will have a business oriented explanation of the project, please go on the [github repo](https://github.com/guillaumedelaloy/Churn_analysis) for more details.
 
 
 
