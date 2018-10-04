@@ -12,6 +12,7 @@ The objective of this project is to understand and predict the churn of a teleco
 * [Interpretation of the model](#interpretation-of-the-model)
 * [Conclusions](#conclusions)
 * [What's next?](#what's-next?)
+* [Weaknesses of this dataset](#weaknesses-of-this-dataset)
 
 
 ## Introduction
