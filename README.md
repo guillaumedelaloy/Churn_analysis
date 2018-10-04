@@ -240,6 +240,15 @@ We can have similar analysis for the other variables. We obtain that the "breake
 
 
 
+
+
+![](contrib_monthly_evo.png?raw=true)
+
+
+
+
+
+
   
 
 ## Conclusions
