@@ -239,7 +239,26 @@ We can clearly see that the tenure contribution for the month to month contracts
 
 ## Conclusions
 
+conclusion 1: We can predict with good performances the churn of customers
+conclusion 2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
+conclusion 3: We know that the categories tenure < 20, monthly contract, with fiber optic, paying by electronic check who have high monthly charges are the categories that increase the churn probability
+
+
 ## What's next ?
+
+Now if your company needs to actually tackle a churn problem, here is the process you need to implement:
+
+- Train and deploy periodically the model we chose on your customers' database(s)
+- Compute the churn probability given by your model for each customer 
+- Then give access to the people interacting with the client, so that they can focus more on the clients with high churn probabilities.
+
+## Weaknesses of this dataset
+
+The overall quality of the data is good but here are some improvements we could have:
+
+1: The size of the data is 7K lines, which is rather small. Bigger size will improve the trust in the results.
+
+2: We don't have temporal data while I assume a churn can be explained by several past events
 
 
 
