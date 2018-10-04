@@ -234,7 +234,10 @@ We can correlate this intuition with the following graph:
 
 
 
-We can clearly see that the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract.
+We can clearly see that the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
+We can have similar analysis for the other variables. We obtain that the "breakeven point" for MonthlyCharges is 60 : a contract more expensive than 60$ per month increases the probability of Churn.
+
+
 
 
   
@@ -242,8 +245,10 @@ We can clearly see that the tenure contribution for the month to month contracts
 ## Conclusions
 
 conclusion 1: We can predict with good performances the churn of customers
+
 conclusion 2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
-conclusion 3: We know that the categories tenure < 20, monthly contract, with fiber optic, paying by electronic check who have high monthly charges are the categories that increase the churn probability
+
+conclusion 3: We know that the categories tenure < 24, monthly contract, with fiber optic, paying by electronic check who have monthly charges above 60 are the categories that increase the churn probability
 
 
 ## What's next ?
@@ -251,8 +256,8 @@ conclusion 3: We know that the categories tenure < 20, monthly contract, with fi
 Now if your company needs to actually tackle a churn problem, here is the process you need to implement:
 
 - Train and deploy periodically the model we chose on your customers' database(s)
-- Compute the churn probability given by your model for each customer 
-- Then give access to the people interacting with the client, so that they can focus more on the clients with high churn probabilities.
+- Compute the churn probability given by your model for each customer, and write the result in the database
+- Then make this information available to the people interacting with the client, so that they can focus more on the clients with high churn probabilities.
 
 ## Weaknesses of this dataset
 
