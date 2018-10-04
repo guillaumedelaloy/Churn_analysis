@@ -201,8 +201,8 @@ We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 
 #### Feature impact on churn probability
 
 Now that we know what features are important, let's investigate how each feature impacts the churn probability.
-In order to do this, i used the  ``` treeinterpreter ``` package. Here is the example of three customers.
-Each feature has a contribution to the predicted probability, written in parenthesis below.
+In order to do this, i used the  ``` treeinterpreter ``` package. Here is the example of three customers. Each customer has an initial probability of churn of 0.5. Then, depending on the values of each feature we add/substract the feaure's contribution (written in parenthesis). 
+
 
 
 
@@ -215,6 +215,24 @@ Each feature has a contribution to the predicted probability, written in parenth
 
 
 
+Let's have an example to better understand what a contribution means:
+
+For customer 1, the tenure is 9, which means it's been 9 months the client subscribed the company's offer, and has a contribution of 0.08. That is to say that, for this customer, a tenure of 9 makes the customer more likely to churn. 
+For customer 2, the tenure is also 9 but the contribution is -0.03, which means the tenure contributes to slighlty lower the likelihood of churn. Why? Because customer 1 and 2 have different characteristics. For instance, one has a one year contract while the other has a month to month contract. Since, customer 1 has a one year contract, it means that he will have to decide or not to subscribe again to the offer in 3 months. While a month to month contract can be stopped at the end of each month.
+We can correlate this intuition with the following graph:
+
+
+
+
+
+![](tenure_contrib_evo.png?raw=true)
+
+
+
+
+
+
+We can clearly see that the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract.
 
 
   
