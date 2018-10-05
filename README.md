@@ -1,7 +1,7 @@
 # How can we improve customers' retention ?
 
-The objective of this project is to understand and predict the churn of a telecommunication firm customers, in order to improve customers' retention. 
-Here I will have a business oriented explanation of the project, please go on the [github repo](https://github.com/guillaumedelaloy/Churn_analysis) for more details.
+The objective of this project is to understand and predict the churn of customers for a telecommunication company, in order to improve customers' retention. 
+I will try to have a business oriented explanation of the project, so please go on the [github repo](https://github.com/guillaumedelaloy/Churn_analysis) for more details.
 
 
 
@@ -22,7 +22,7 @@ Here I will have a business oriented explanation of the project, please go on th
 
 The data set comes from [IBM Sample Data Sets](https://community.watsonanalytics.com/wp-content/uploads/2015/03/WA_Fn-UseC_-Telco-Customer-Churn.csv)
 
-The data set contains information on 7032 clients that subscrided a contract. Among those 7032 clients, 1869 clients have churned. The objective is to understand why they churned and provide a strategy to reduce this number.
+The data set contains information on 7032 clients who subscribed a contract. Among those 7032 clients, 1869 clients have churned. The objective is to understand why they churned and provide a strategy to reduce this number.
 
 - Churn, Yes or No
 - Services that each customer has signed up for – phone, multiple lines, internet, online security, online backup, device protection, tech support, and streaming TV and movies
