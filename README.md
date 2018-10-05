@@ -8,11 +8,11 @@ I will try to have a business oriented explanation of the project, so please go 
 # Table of Contents
 
 * [Introduction](#introduction)
-* [Feature Engineering](#feature-Engineering) 
+* [Feature Engineering](#feature-engineering) 
 * [Machine learning modeling](#machine-learning-modeling)
 * [Interpretation of the model](#interpretation-of-the-model)
 * [Conclusions](#conclusions)
-* [What's next?](#what's-next?)
+* [Next steps](#next-steps)
 * [Weaknesses of this dataset](#weaknesses-of-this-dataset)
 
 
@@ -36,7 +36,7 @@ Many churners have a month to month subscription :
 
 
 
-![](Churn_Contract.png?raw=false )
+![](graphs/Churn_Contract.png?raw=false )
 
 
 
@@ -45,7 +45,7 @@ Clients with Fiber optic have a high churn rate :
 
 
 
-![](Internet_churn.png?raw=true)
+![](graphs/Internet_churn.png?raw=true)
 
 
 
@@ -84,7 +84,7 @@ Now let's check the correlations between the 32 variables :
 
 
 
-![](Churn_corr.png?raw=false )
+![](graphs/Churn_corr.png?raw=false )
 
 
 
@@ -96,7 +96,7 @@ for each variable, we look for the variables with a correlation above a threshol
 
 
 
-![](Churn_decorr.png?raw=false)
+![](graphs/Churn_decorr.png?raw=false)
 
 
 
@@ -162,7 +162,7 @@ For instance, I decided to use graphviz, a visualization tool for decision trees
 
 
 
-![](RF_inter_3.png?raw=false)
+![](graphs/RF_inter_3.png?raw=false)
 
 
 
@@ -190,7 +190,7 @@ Let's now have a look at the importance of each feature in the model :
 
 
 
-![](feature_importance.png?raw=false)
+![](graphs/feature_importance.png?raw=false)
 
 
 
@@ -210,7 +210,7 @@ In order to do this, i used the  ``` treeinterpreter ``` package. Here is the ex
 
 
 
-![](impact_proba.png?raw=true)
+![](graphs/impact_proba.png?raw=true)
 
 
 
@@ -227,7 +227,7 @@ We can correlate this intuition with the following graph:
 
 
 
-![](tenure_contrib_evo.png?raw=true)
+![](graphs/tenure_contrib_evo.png?raw=true)
 
 
 
@@ -243,7 +243,7 @@ We can have similar analysis with the other variables. We obtain that the "break
 
 
 
-![](contrib_monthly_evo.png?raw=true)
+![](graphs/contrib_monthly_evo.png?raw=true)
 
 
 
