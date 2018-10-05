@@ -259,6 +259,14 @@ We can have similar analysis with the other variables. We obtain that the "break
 
 
 
+#### A unified interpretation
+
+While scrolling my Linkedin feed, I found a medium article related to machine learning model interpretation and a new package called [shap](https://github.com/slundberg/shap), inspired from a 2017 [paper](https://arxiv.org/abs/1705.07874). Here is the result i obtained with my RF model:
+
+
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/Shap_interpretation.png?raw=true">
+</p>
 
 
 
