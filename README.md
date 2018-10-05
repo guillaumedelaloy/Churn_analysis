@@ -9,9 +9,18 @@ I will try to have a business oriented explanation of the project, so please go 
 
 * [Introduction](#introduction)
   + [Data overview](#data-overview)
-* [Feature Engineering](#feature-engineering) 
+  + [Some visualizations ](#some-visualizations)
+* [Feature Engineering](#feature-engineering)
+  + [Rebalance the data](rebalance-the-data)
+  + [Dealing with colinearity](#dealing-with-colinearity)
 * [Machine learning modeling](#machine-learning-modeling)
+  + [Logistic Regression](#logistic-regression)
+  + [Random Forest](#random-forest)
 * [Interpretation of the model](#interpretation-of-the-model)
+  + [Decision tree](#decision-tree)
+  + [Feature importance](#feature-importance)
+  + [Feature impact on churn probability](#feature-impact-on-churn-probability)
+  + [A unified interpretation](#a-unified-interpretation)
 * [Conclusions](#conclusions)
 * [Next steps](#next-steps)
 * [Weaknesses of this dataset](#weaknesses-of-this-dataset)
@@ -30,7 +39,7 @@ The data set contains information on 7032 clients who subscribed a contract. Amo
 - Customer account information – how long they’ve been a customer, contract, payment method, paperless billing, monthly charges, and total charges
 - Demographic info about customers – gender, age range, and if they have partners and dependents
 
-#### Some visualisations 
+#### Some visualizations 
 
 
 Many churners have a month to month subscription :
