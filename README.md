@@ -271,7 +271,7 @@ We can have similar analysis with the other variables. We obtain that the "break
 
 2: The tenure, contract, Internet service, type of payment and monthly charges are the 5 most important factors to determine the churn.
 
-3: We know that, in average, the categories ```tenure < 24```, ```month to month contract```, ```fiber optic```, ```paying by electronic check```, with ```monthly charges > 60``` increase the churn probability
+3: In average, the categories ```tenure < 24```, ```month to month contract```, ```fiber optic```, ```paying by electronic check```, with ```monthly charges > 60``` increase the churn probability
 
 
 ## Next Steps
@@ -290,7 +290,7 @@ The overall quality of the data is good but here are some ways of improvement:
 
 1: The size of the data is 7K lines, which is rather small. Bigger size will improve the trust in the results.
 
-2: We don't have temporal data while I assume a churn can be explained by several past events
+2: No temporal data while I assume a churn can be explained by several past events
 
 
 
