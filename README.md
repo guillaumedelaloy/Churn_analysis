@@ -35,8 +35,10 @@ The data set contains information on 7032 clients who subscribed a contract. Amo
 Many churners have a month to month subscription :
 
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/Churn_Contract.png?raw=true">
+</p>
 
-![](graphs/Churn_Contract.png?raw=false )
 
 
 
@@ -44,8 +46,9 @@ Many churners have a month to month subscription :
 Clients with Fiber optic have a high churn rate :
 
 
-
-![](graphs/Internet_churn.png?raw=true)
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/Internet_churn.png?raw=true">
+</p>
 
 
 
@@ -84,7 +87,9 @@ Now let's check the correlations between the 32 variables :
 
 
 
-![](graphs/Churn_corr.png?raw=false )
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/Churn_corr.png?raw=true">
+</p>
 
 
 
@@ -95,8 +100,10 @@ In order to remove the colinearities, we implement the following idea :
 for each variable, we look for the variables with a correlation above a threshold. Then we order those variables by descending correlation and we add the first one to a list. At the end of the while loop, the list contains all the variables we will remove from the explanatory variables. After some tests, we choose 0.85 as the optimal threshold and we obtain the following correlations:
 
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/Churn_decorr.png?raw=true">
+</p>
 
-![](graphs/Churn_decorr.png?raw=false)
 
 
 
@@ -161,8 +168,10 @@ For instance, I decided to use graphviz, a visualization tool for decision trees
 
 
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/RF_inter_3.png?raw=true">
+</p>
 
-![](graphs/RF_inter_3.png?raw=false)
 
 
 
@@ -190,7 +199,9 @@ Let's now have a look at the importance of each feature in the model :
 
 
 
-![](graphs/feature_importance.png?raw=false)
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/feature_importance.png?raw=true">
+</p>
 
 
 
@@ -208,9 +219,9 @@ In order to do this, i used the  ``` treeinterpreter ``` package. Here is the ex
 
 
 
-
-
-![](graphs/impact_proba.png?raw=true)
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/impact_proba.png?raw=true">
+</p>
 
 
 
@@ -226,8 +237,9 @@ We can correlate this intuition with the following graph:
 
 
 
-
-![](graphs/tenure_contrib_evo.png?raw=true)
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/tenure_contrib_evo.png?raw=true">
+</p>
 
 
 
@@ -241,9 +253,10 @@ We can have similar analysis with the other variables. We obtain that the "break
 
 
 
+<p align="center">
+  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/contrib_monthly_evo.png?raw=true">
+</p>
 
-
-![](graphs/contrib_monthly_evo.png?raw=true)
 
 
 
