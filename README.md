@@ -269,6 +269,9 @@ While scrolling my Linkedin feed, I found a medium article related to machine le
 </p>
 
 
+To conclude, tenure has a strong negative impact on churn probability when taking high values(red points), while it has a strong positive impact when taking low values(blue points), ie it increases the churn probability. For binary factors, low values means 0/False and high values means 1/True.
+
+
 
 
   
