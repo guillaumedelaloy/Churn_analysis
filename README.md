@@ -274,7 +274,7 @@ We can have similar analysis with the other variables. We obtain that the "break
 3: We know that, in average, the categories ```tenure < 24```, ```month to month contract```, ```fiber optic```, ```paying by electronic check```, with ```monthly charges > 60``` increase the churn probability
 
 
-## What's next ?
+## Next Steps
 
 Now if your company needs to actually tackle a churn problem, here is the process you need to implement:
 
