@@ -1,7 +1,7 @@
 # How can we improve customers' retention ?
 
 The objective of this project is to understand and predict the churn of customers for a telecommunication company, in order to improve customers' retention. 
-I will try to have a business oriented explanation of the project, so please go to the [github repo](https://github.com/guillaumedelaloy/Churn_analysis) for more details.
+We will try to have a business oriented explanation of the project, so please go to the [github repo](https://github.com/guillaumedelaloy/Churn_analysis) for more details.
 
 
 
@@ -62,7 +62,7 @@ Clients with Fiber optic have a high churn rate :
 
 
 
-According to the graphs above, it looks like some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
+According to the graphs above, some variables such as the internet service or the type of contract have very different distributions among churners and non-churners : it's a good sign for the feasability of the project.
 
 
 ## Feature Engineering 
@@ -102,8 +102,7 @@ Now let's check the correlations between the 32 variables :
 </p>
 
 
-
-We can see that many variables are very correlated. For instance, 'InternetService_No' is obviously highly correlated with 'OnlineSecurity_No internet service'. 
+Many variables are very correlated. For instance, 'InternetService_No' is obviously highly correlated with 'OnlineSecurity_No internet service'. 
 
 In order to remove the colinearities, we implement the following idea : 
 
@@ -121,9 +120,7 @@ for each variable, we look for the variables with a correlation above a threshol
 
 
 
-We have two goals here :
-
-goal 1 : detect efficiently the customers that are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
+goal 1 : detect efficiently the customers who are likely to churn. We assume that the company would like to be able to target all the churners among the smallest population of customers. In other words, if the model predicts 'Churner' for a customer, we want to be sure that it is the case. In order to fulfill this objective, we would focus on the recall for the churners' class.
 
 goal 2 : Have a model with a good interpretability, in order to be able to prevent the events that lead to a churn
 
@@ -173,7 +170,7 @@ Random forests rely on two principles :
 - random subset of features : each decision tree is trained on a subset of features
 
 Random forests are often considered as a "black box" but some tools can make their interpretation quite straightforward.
-For instance, I decided to use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here I choose a tree of small maximum depth (=3) because deep trees are impossible to display:
+For instance, we can use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here a tree of small maximum depth (=3) was chosen because deep trees are impossible to display:
 
 
 
@@ -224,7 +221,7 @@ We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 
 #### Feature impact on churn probability
 
 Now that we know what features are important, let's investigate how each feature impacts the churn probability.
-In order to do this, i used the  ``` treeinterpreter ``` package. Here is the example of three customers. Each customer has an initial probability of churn of 0.5. Then, depending on the values of each feature we add/substract the feature's contribution (written in parenthesis). 
+In order to do this, I used the  ``` treeinterpreter ``` package. If we take the example of three customers, each one has an initial probability of churn of 0.5. Then, depending on the values of each feature we add/substract the feature's contribution (written in parenthesis). 
 
 
 
@@ -238,7 +235,6 @@ In order to do this, i used the  ``` treeinterpreter ``` package. Here is the ex
 
 
 
-Let's have an example to better understand what a contribution means:
 
 For customer 1, the tenure is 9, which means it's been 9 months the client subscribed the company's offer, and has a contribution of 0.08. That is to say that, for this customer, a tenure of 9 makes the customer more likely to churn. 
 For customer 2, the tenure is also 9 but the contribution is -0.03, which means the tenure contributes to slighlty lower the likelihood of churn. Why? Because customer 1 and 2 have different characteristics. For instance, one has a one year contract while the other has a month to month contract. Since, customer 1 has a one year contract, it means that he will have to decide or not to subscribe again to the offer in 3 months. While a month to month contract can be stopped at the end of each month.
@@ -256,7 +252,7 @@ We can correlate this intuition with the following graph:
 
 
 
-We can clearly see that, in average, the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
+On average, the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
 
 We can have similar analysis with the other variables. We obtain that the "breakeven point" for MonthlyCharges is 60 : a contract more expensive than 60$ per month increases the churn probability.
 
@@ -271,7 +267,7 @@ We can have similar analysis with the other variables. We obtain that the "break
 
 #### A unified interpretation
 
-While scrolling my Linkedin feed, I found a medium article related to machine learning model interpretation and a new package called [shap](https://github.com/slundberg/shap), inspired from a 2017 [paper](https://arxiv.org/abs/1705.07874). Here is the result i obtained with my RF model:
+While scrolling my Linkedin feed, I found a medium article related to machine learning model interpretation and a new package called [shap](https://github.com/slundberg/shap), inspired from a 2017 [paper](https://arxiv.org/abs/1705.07874). Here is the result I obtained with my RF model:
 
 
 <p align="center">
