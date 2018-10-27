@@ -15,9 +15,6 @@ We will try to have a business oriented explanation of the project, so please go
   + [Logistic Regression](#logistic-regression)
   + [Random Forest](#random-forest)
 * [Interpretation of the model](#interpretation-of-the-model)
-  + [Decision tree](#decision-tree)
-  + [Feature importance](#feature-importance)
-  + [Feature impact on churn probability](#feature-impact-on-churn-probability)
   + [A unified interpretation](#a-unified-interpretation)
 * [Conclusions](#conclusions)
 * [Next steps](#next-steps)
@@ -158,110 +155,6 @@ However, SVMs are really hard to interpret so we won't choose this model.
 
 
 ## Interpretation of the model
-
-
-#### Decision tree
-
-Random forests rely on two principles :
-
-- bagging : choose B samples and train decision trees on each of these B samples. Then we take the mode of all the predictions in order to determine the predicted class.
-- random subset of features : each decision tree is trained on a subset of features
-
-Random forests are often considered as a "black box" but some tools can make their interpretation quite straightforward.
-For instance, we can use graphviz, a visualization tool for decision trees, in order to plot one of the M decision trees of our random forest. Here a tree of small maximum depth (=3) was chosen because deep trees are impossible to display:
-
-
-
-
-<p align="center">
-  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/RF_inter_3.png?raw=true">
-</p>
-
-
-
-
-
-
-
-
-We can see in the upper cell that we initially have 7228 individuals in our training set. The ```value``` array indicates the population is divided in two classes: 'no churn' (3604) and 'churn' (3624). We can read ```class = Churn ``` because 'churn' is the dominant class (3624 > 3604).
-
-The first decision is based on the value of 'Contract_Two year' : 
-  
-  If ```(Contract_Two year <= 0.5) == False ``` , i.e  ```Contract = Two year ``` , then we go right. Among the initial 7228   individuals, only 1206 have a two year contract. Among those 1206 individuals, 1114 belong to the 'no churn' class. As a consequence, people with a two year contract are strongly likely to do not churn. We can make similar analyses for the other branches of the tree.
-    
-
-
-
-#### Feature importance
-
-
-
-
-
-Let's now have a look at the importance of each feature in the model :
-
-
-
-
-<p align="center">
-  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/feature_importance.png?raw=true">
-</p>
-
-
-
-
-
-We can see that ``` ['tenure', 'MonthlyCharges', 'Contract', 'InternetService', 'PaymentMethod'] ``` contributed to 70% of the predictive power of our model. I summed the feature importances of the dummies under their corresponding categorical variables for interpretation purposes.
-
-
-
-#### Feature impact on churn probability
-
-Now that we know what features are important, let's investigate how each feature impacts the churn probability.
-In order to do this, I used the  ``` treeinterpreter ``` package. If we take the example of three customers, each one has an initial probability of churn of 0.5. Then, depending on the values of each feature we add/substract the feature's contribution (written in parenthesis). 
-
-
-
-
-<p align="center">
-  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/impact_proba.png?raw=true">
-</p>
-
-
-
-
-
-
-
-For customer 1, the tenure is 9, which means it's been 9 months the client subscribed the company's offer, and has a contribution of 0.08. That is to say that, for this customer, a tenure of 9 makes the customer more likely to churn. 
-For customer 2, the tenure is also 9 but the contribution is -0.03, which means the tenure contributes to slighlty lower the likelihood of churn. Why? Because customer 1 and 2 have different characteristics. For instance, one has a one year contract while the other has a month to month contract. Since, customer 1 has a one year contract, it means that he will have to decide or not to subscribe again to the offer in 3 months. While a month to month contract can be stopped at the end of each month.
-We can correlate this intuition with the following graph:
-
-
-
-
-<p align="center">
-  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/tenure_contrib_evo.png?raw=true">
-</p>
-
-
-
-
-
-
-On average, the tenure contribution for the month to month contracts decreases faster than for the one year and two year contract. Moreover, an interesting insight is that we can see all three regression lines going below zero when tenure goes above 24 (two years). This means that when tenure is above 24, the contribution becomes negative, i.e tenure > 24 decreases the churn probability. When tenure <=24, the contribution is positive and increases the churn probability.
-
-We can have similar analysis with the other variables. We obtain that the "breakeven point" for MonthlyCharges is 60 : a contract more expensive than 60$ per month increases the churn probability.
-
-
-
-
-<p align="center">
-  <img src= "https://github.com/guillaumedelaloy/Churn_analysis/blob/master/graphs/contrib_monthly_evo.png?raw=true">
-</p>
-
-
 
 #### A unified interpretation
 
