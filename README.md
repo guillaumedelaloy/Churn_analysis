@@ -1,7 +1,7 @@
 The objective of this project is to understand and predict the churn of customers for a telecommunication company, in order to improve customers' retention. 
 
 As the data is very imbalanced, I had to deal with imbalanced classification issues.
-I used the imblearn package from Guilluame Lemaitre, in order to resample the majority and the minority class.
+I used the imblearn package from Guillaume Lemaitre, in order to resample the majority and the minority class.
 
 hypothesis : the telco company wants to identify all the churners. The action required when a customer is predicted as future churner is not expensive : as a consequence, FP are not an issue.
 
