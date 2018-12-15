@@ -10,7 +10,7 @@ Here is a quick recap of the models' performances, (I will explain more in detai
 ```
                                   precision on majority     recall on minority  
 
-logistic regression                 56 %                          85 %
+baseline logistic regression        56 %                          85 %
 
 logistic regression                 79 %                          90 %
 (with penalization on minority)
