@@ -67,16 +67,8 @@ According to the graphs above, some variables such as the internet service or th
 
 In this kind of classification problems, we need to work with balanced classes. Let's upsample the minority class :
 
-```
-minority=raw_data[raw_data.Churn=='Yes']
-majority=raw_data[raw_data.Churn=='No']
-df_minority_upsampled = resample(minority, 
-                                 replace=True,     
-                                 n_samples=len(majority),    
-                                 random_state=123)
-data_bal=pd.concat([df_minority_upsampled,majority])
 
-```
+to do : update work with the imblearn library to undersample the majority class with Knn
 
 
 #### Dealing with colinearity 
